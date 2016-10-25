@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-#Introdução a banco de dados com python3
+#Criação de um CRUD em python3 com SQLite3
+#Autor: Moisés Tedeschi
 
 import sqlite3
-
 def main():
     db = sqlite3.connect("son.bd")
     db.row_factory = sqlite3.Row #Traz o objeto da linha correspondente, mas precisa ser visualizado como dicionário.
