@@ -1,8 +1,8 @@
 '''
-Numero perfeito: eh um numero
+Numero perfeito: e um numero
 onde a soma dos seus divisores
 positivos (exceto o proprio
-numero) eh igual a esse numero
+numero) e igual a esse numero
 
 Exemplo: 6
 
