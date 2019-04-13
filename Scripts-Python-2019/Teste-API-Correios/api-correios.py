@@ -22,6 +22,8 @@ try:
     print("Informe o número do seu CEP")
     cep = input("Digite seu CEP: ")
     new_cep = cep.replace("-", "")
+    # Variável endereço recebe a consulta do CEP,
+    # mas por parâmentro um novo CEP sem o sinal "-" é passado.
     endereco = pycep_correios.consultar_cep(new_cep)
 
     print("\nResultado da Consulta")
