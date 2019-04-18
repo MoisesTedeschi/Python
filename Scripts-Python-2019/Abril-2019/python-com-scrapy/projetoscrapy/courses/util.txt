@@ -1,0 +1,2 @@
+Criando um novo projeto scrapy no terminal: scrapy startproject nomedoprojeto
+Criando uma nova spyder dentro da pasta "course" via terminal: scrapy genspider coursera https://pt.coursera.org
