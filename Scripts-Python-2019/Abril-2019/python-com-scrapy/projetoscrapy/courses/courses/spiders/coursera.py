@@ -4,8 +4,10 @@ import scrapy
 
 class CourseraSpider(scrapy.Spider):
     name = 'coursera'
-    allowed_domains = ['https://pt.coursera.org']
-    start_urls = ['http://https://pt.coursera.org/']
+    # Dominios permitidos - São os dominios que a spider pode trabalhar.
+    # allowed_domains = ['https://pt.coursera.org']
+    start_urls = ['https://pt.coursera.org/']
 
     def parse(self, response):
-        pass
+        
+        self.log("Hello World! Scrapy Project")
