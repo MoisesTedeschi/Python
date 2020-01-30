@@ -3,8 +3,7 @@
 ![](https://github.com/MoisesTedeschi/Python/blob/master/Python%20-%20Google%20Speech%20-%20Sua%20Voz/img/python-google-speech.png)
 
 ## Objetivo
-Mostrar o reconhecimento de fala e como você pode converter sua voz em texto com Python usando o Google Speech. 
-Usaremos uma biblioteca de reconhecimento para a realização do "reconhecimento da fala". Ela tem suporte para vários mecanismos e API's.
+Mostrar o reconhecimento de fala e como você pode converter sua voz em texto com Python usando o Google Speech.
 
 ## Mecanismo ou API's de Reconhecimento de Fala
 
