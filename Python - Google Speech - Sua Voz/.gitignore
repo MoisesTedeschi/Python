@@ -1,0 +1,6 @@
+# Cache
+__pycache__/
+# VSCode versions
+.vscode
+# Environments
+.venv
