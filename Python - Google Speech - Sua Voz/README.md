@@ -1,6 +1,6 @@
 ## Usando Python, Google Speech e sua Voz para criar textos, gravar áudios e navegar na internet
 
-![](img\python-google-speech.png)
+![](\img\python-google-speech.png)
 
 ## Objetivo
 Mostrar o reconhecimento de fala e como você pode converter sua voz em texto com Python usando o Google Speech. 
