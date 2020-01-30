@@ -38,4 +38,5 @@ pipwin install pyaudio
 [Referência Speech Recognition](https://github.com/Uberi/speech_recognition/blob/master/reference/library-reference.rst)
 
 
-Por: [@TheMOA](https://twitter.com/TheMoaMe) – moisestedeschi@gmail.com
+Por: [@TheMOA](https://twitter.com/TheMoaMe)
+E-mail: moisestedeschi@gmail.com
