@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather API</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Climate in City 🌦️</h1>
+        
+        <form method="POST">
+            <select name="city">
+                {% for city in cities %}
+                    <option value="{{ loop.index0 }}" 
+                        {% if loop.index0 == indice_selecionado %}selected{% endif %}>
+                        {{ city.name }}
+                    </option>
+                {% endfor %}
+            </select>
+            <button type="submit">Update</button>
+        </form>
+
+        <div class="grid">
+            <div class="card">
+                <h3>🌡️ Temperature</h3>
+                <p>Maxima: {{ resume.temp_max }}°C</p>
+                <p>Minimal: {{ resume.temp_min }}°C</p>
+            </div>
+            <div class="card">
+                <h3>🌧️ Rainfall</h3>
+                <p>Total: {{ resume.prec_total }} mm</p>
+            </div>
+            <div class="card">
+                <h3>💨 Winds</h3>
+                <p>Maximum speed: {{ resume.winds_max }} km/h</p>
+            </div>
+        </div>
+
+        <h2>Hourly Forecast</h2>
+        <div class="grid-charts">
+            <div class="card">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="card">
+                <canvas id="precipitationChart"></canvas>
+            </div>
+            <div class="card">
+                <canvas id="humidityChart"></canvas>
+            </div>
+            <div class="card">
+                <canvas id="windspeedChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const hours = {{ hours | safe }};
+        const temperatures = {{ temperatures | safe }};
+        const precipitation = {{ precipitation | safe }};
+        const humidity = {{ humidity | safe }};
+        const winds = {{ winds | safe }};
+
+        new Chart(document.getElementById('temperatureChart'), {
+            type: 'line',
+            data: {
+                labels: hours.map(hour => hour.split('T')[1]),
+                datasets: [{
+                    label: 'Temperatures (°C)',
+                    data: temperatures,
+                    borderColor: '#ff6384',
+                    fill: false
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        new Chart(document.getElementById('precipitationChart'), {
+            type: 'bar',
+            data: {
+                labels: hours.map(hour => hour.split('T')[1]),
+                datasets: [{
+                    label: 'Precipitation (mm)',
+                    data: precipitation,
+                    backgroundColor: '#36a2eb'
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        new Chart(document.getElementById('humidityChart'), {
+            type: 'line',
+            data: {
+                labels: hours.map(hour => hour.split('T')[1]),
+                datasets: [{
+                    label: 'Humidity (%)',
+                    data: humidity,
+                    borderColor: '#4bc0c0',
+                    fill: false
+                }]
+            },
+            options: { responsive: true }
+        });
+
+        new Chart(document.getElementById('windspeedChart'), {
+            type: 'bar',
+            data: {
+                labels: hours.map(hour => hour.split('T')[1]),
+                datasets: [{
+                    label: 'Wind Speed (km/h)',
+                    data: winds,
+                    backgroundColor: '#ffce56'
+                }]
+            },
+            options: { responsive: true }
+        });
+    </script>
+</body>
+</html>
